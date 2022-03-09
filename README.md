@@ -1,2 +1,4 @@
 # Web_Eng_Project_WebFzion
-Q1 PE in WebEng1 
+Das Projekt beinhaltet das Erstellen einer Webseite.
+Die Webseite hat die Funktion einer persönlichen Fotocloud.
+
