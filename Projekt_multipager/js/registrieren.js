@@ -36,6 +36,7 @@ function register() {
       setError("Das Passwort muss mindestens 8 und maximal 20 Zeichen lang sein.");
       return;
     }
+    //passwort checken
     let passwordcontrol = document.getElementById("reg_inp_rep_pswd").value;
     console.log(password);
     console.log(passwordcontrol);
