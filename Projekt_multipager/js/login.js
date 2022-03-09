@@ -1,9 +1,9 @@
-/*function weiterleiten(){
+function to_register(){
     document.getElementById("login_info").innerHTML="Sie werden weitergeleitet... :)";
     setTimeout(() => {
         window.location.href = window.location.href.replace("login", "registrieren");
     }, 3000);
-}*/
+}
 function setError(errorText) {
     if (typeof errorText === "string") {
       document.getElementById("error_info").innerHTML = errorText;
@@ -29,8 +29,8 @@ function setError(errorText) {
       return;
     }
     // Check user info
-    let username = document.getElementById("USERNAME").value;
-    let password = document.getElementById("PASSWORD").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
     
     let savedUserString = window.localStorage.getItem(`this.${username}`);
     try {

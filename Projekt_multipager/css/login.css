@@ -13,13 +13,13 @@ html{
 .Login_Header{
     text-decoration: underline;
 }
-.Button_login{
+.Button_login, .Button_to_register{
     color:  #fff;
     font-weight: bold;
     background-color: #c4c4c4;
     border-radius: 25px;
     height: 25px;
-    width: 75px;
+    width: 100px;
 }
 #welcome_indo{color: white;}
 .Login_Input_Username, .Login_Input_Password{
@@ -50,5 +50,3 @@ html{
 .buttons{grid-area: btn}
 #login_info{grid-area: info}
 #error_info{grid-area: error_info}
-.link_reg{height: fit-content}
-a:hover{color: cyan}
