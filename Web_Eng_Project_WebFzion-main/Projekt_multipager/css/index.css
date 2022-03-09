@@ -1,0 +1,89 @@
+:root{
+    --blue: #1e90ff;
+    --black: #000;
+    --white: #ffffff;
+}
+html{
+    color: var(--white);
+    background-color: var(--black);
+    font-family: Alegreya, 'Times New Roman', Times, serif;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+}
+.Homepage{
+    background-color: var(--black);
+    font-size: 16px;
+}
+.Homepage_Header{
+    text-decoration: underline;
+}
+.button_dark_mode, .button_green_mode, .Button_Upload,
+.Button_profile, .button_white_mode{
+    color:  black;
+    font-weight: bold;
+    background-color: #c4c4c4;
+    border-radius: 25px;
+    height: 25px;
+    width: 125px;
+}
+.Link{text-decoration: none}
+a:hover{color: white}
+@media(min-width: 1200px){
+    .Homepage{
+        position: fixed;
+        min-height: 99%;
+        min-width: 99%;
+        z-index: 0;
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 0.2fr;
+        grid-template-areas:
+        "homepage_headerleiste homepage_headerleiste homepage_headerleiste"
+        "homepage_nav homepage_inhalt homepage_seite";
+    }
+    .Homepage_Headerleiste{grid-area: homepage_headerleiste}
+    .Homepage_Navigation{grid-area: homepage_nav}
+    .Homepage_Inhalt{grid-area: homepage_inhalt}
+    .Homepage_Seitenspalte{grid-area: homepage_seite}
+    
+    .Homepage_Inhalt{
+        position: absolute;
+        display: flex;
+        height: flex-end;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+@media(max-width: 400px){
+    .Homepage{
+        position: fixed;
+        min-height: 99%;
+        min-width: 99%;
+        z-index: 0;
+        display: grid;
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: 0.2fr;
+        grid-template-areas:
+        "homepage_headerleiste homepage_headerleiste homepage_headerleiste"
+        "homepage_nav homepage_nav homepage_nav"
+        "homepage_inhalt homepage_inhalt homepage_inhalt"
+        "homepage_seite homepage_seite homepage_seite";
+    }
+    .Homepage_Headerleiste{grid-area: homepage_headerleiste}
+    .Homepage_Navigation{grid-area: homepage_nav}
+    .Homepage_Inhalt{grid-area: homepage_inhalt}
+    .Homepage_Seitenspalte{grid-area: homepage_seite}
+
+    .Homepage_Inhalt{
+        position: absolute;
+        display: flex;
+        height: flex-end;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}

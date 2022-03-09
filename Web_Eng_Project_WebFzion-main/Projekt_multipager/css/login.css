@@ -1,0 +1,54 @@
+html{
+    color: #fff;
+    background-color: black;
+    font-family: Alegreya, 'Times New Roman', Times, serif;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+}
+.Login{
+    background-color: #000;
+    font-size: 16px;
+}
+.Login_Header{
+    text-decoration: underline;
+}
+.Button_login{
+    color:  #fff;
+    font-weight: bold;
+    background-color: #c4c4c4;
+    border-radius: 25px;
+    height: 25px;
+    width: 75px;
+}
+#welcome_indo{color: white;}
+.Login_Input_Username, .Login_Input_Password{
+    width: 515px;
+    height: 38px;
+    border: 1px solid #c4c4c4;
+    background-color: #c4c4c4;
+    border-radius: 25px;
+}
+.Login{
+    position: fixed;
+    min-height: 99%;
+    min-width: 99%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". log_header ."
+    ". log_inp_username ."
+    ". log_inp_password ."
+    "btn btn btn"
+    ". info ."
+    ". error_info .";
+}
+.Login_Header{grid-area: log_header}
+.Login_Input_Username{grid-area: log_inp_username; text-align: center}
+.Login_Input_Password{grid-area: log_inp_password; text-align: center}
+.buttons{grid-area: btn}
+#login_info{grid-area: info}
+#error_info{grid-area: error_info}
+.link_reg{height: fit-content}
+a:hover{color: cyan}
