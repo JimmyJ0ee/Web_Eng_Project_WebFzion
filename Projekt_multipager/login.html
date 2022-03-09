@@ -11,12 +11,12 @@
 <body>
     <div id="Login" class="Login">
         <h2 class="Login_Header">Login</h2>
-        <input class="Login_Input_Username" placeholder="USERNAME">
-        <input type="password" class="Login_Input_Password" placeholder="PASSWORD">
+        <input class="Login_Input_Username" id="username" placeholder="USERNAME">
+        <input type="password" class="Login_Input_Password" id="password" placeholder="PASSWORD">
         </br>
         <buttons class="buttons">
             <button class="Button_login" onclick="login()">Login</button>
-            <a class="link_reg" href="/home/osboxes/Documents/Web Eng/Projekt_multipager/registrieren.html">Registrieren</a>
+            <button class="Button_to_register" onclick="to_register()">Registrieren</button>
         </buttons>
         <p id="login_info"></p>
         <p id="error_info"></p>

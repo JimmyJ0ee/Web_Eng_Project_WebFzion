@@ -22,7 +22,7 @@ html{
     background-color: #c4c4c4;
     border-radius: 25px;
 }
-.Button_registration, #Button_ausklappen{
+.Button_registration,.Button_to_login, #Button_ausklappen{
     color:  #fff;
     font-weight: bold;
     background-color: #c4c4c4;
@@ -59,7 +59,7 @@ html{
     ". Button_ausklappen ."
     ". pop_up_human ."
     ". reg_inp_human ."
-    ". btn_registration ."
+    ". btns ."
     ". info ."
     ". error_info .";
 }
@@ -71,6 +71,6 @@ html{
 #Registration_Input_Human{grid-area: reg_inp_human; text-align: center}
 #Button_ausklappen{grid-area: Button_ausklappen}
 #Pop_Up_Human{grid-area: pop_up_human}
-.Button_registration{grid-area: btn_registration}
+.buttons{grid-area: btns}
 #registrieren_info{grid-area: info}
 #error_info{grid-area: error_info}

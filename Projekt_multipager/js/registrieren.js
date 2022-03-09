@@ -1,9 +1,9 @@
-/*function weiterleiten(){
+function to_login(){
     document.getElementById("registrieren_info").innerHTML="Sie werden weitergeleitet... :)";
     setTimeout(() => {
-        window.location.href = window.location.href.replace("registrieren", "index");
+        window.location.href = window.location.href.replace("registrieren", "login");
     }, 3000);
-}*/
+}
 function setError(errorText) {
     if (typeof errorText === "string") {
       document.getElementById("error_info").innerHTML = errorText;
@@ -36,6 +36,16 @@ function register() {
       setError("Das Passwort muss mindestens 8 und maximal 20 Zeichen lang sein.");
       return;
     }
+    let passwordcontrol = document.getElementById("reg_inp_rep_pswd").value;
+    console.log(password);
+    console.log(passwordcontrol);
+    if (passwordcontrol == ""){
+        setError("Bitte füllen Sie das 'Repeat Passwort'-Feld aus!");
+        return;
+    }else if (passwordcontrol != password){
+        setError("Die Passwörter stimmen nicht überein, bitte prüfen Sie Ihre Eingaben!");
+        return;
+    }
     //geschlecht prüfen, hier dann evtl. Farbwahl (noch in Registrieren implementieren)
     /*let gender = "";
     let gendertxt="";
@@ -53,8 +63,12 @@ function register() {
     }*/
     //Captcha Code prüfen
     let human_input=document.getElementById("Registration_Input_Human").value;
-    if (! human_input==='263S2V'){
-        setError("Geben Sie das Captcha richtig ein!")
+    if (human_input == ""){
+      setError("Bitte geben Sie den Captcha Code ein");
+      return;
+    }else if (human_input != "263S2V"){
+        setError("Geben Sie den Captcha Code richtig ein!");
+        return;
     }
     //prüfen, ob Nutzer schon vorhanden
     let existingUser = window.localStorage.getItem(`this.${username}`);
