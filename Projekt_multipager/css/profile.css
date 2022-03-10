@@ -6,17 +6,17 @@ html{
     align-items: center;
     font-weight: bold;
 }
-.Profile_Input_Username, .Profile_Input_Mail,
-.Profile_Input_Password, .Profile_Input_Password_2{
-    width: 515px;
+.show_username, .show_mail, .show_password{
+    width: 250px;
     height: 38px;
     border: 1px solid #c4c4c4;
+    color: darkgreen;
     background-color: #c4c4c4;
-    border-radius: 25px;
+    border-radius: 10px;
     align-self: center;
 }
-.Button_Logout, .Button_Delete_Profile, .Button_back2home{
-    color:  #fff;
+.Button_Logout, .Button_back2home{
+    color:  black;
     font-weight: bold;
     background-color: #c4c4c4;
     border-radius: 25px;
@@ -30,6 +30,7 @@ html{
     min-width: 99%;
     background-color: black;
     display: grid;
+    justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.1fr;
     grid-template-areas:
@@ -37,14 +38,12 @@ html{
     ". prof_inp_username ."
     ". prof_inp_mail ."
     ". prof_inp_password ."
-    ". prof_inp_password_2 ."
     "prof_buttons prof_buttons prof_buttons"
     ". info .";
 }
 .Profile_Header{grid-area: prof_header}
-.Profile_Input_Username{grid-area: prof_inp_username; text-align: center}
-.Profile_Input_Mail{grid-area: prof_inp_mail; text-align: center}
-.Profile_Input_Password{grid-area: prof_inp_password; text-align: center}
-.Profile_Input_Password_2{grid-area: prof_inp_password_2; text-align: center}
+.show_username{grid-area: prof_inp_username; text-align: center}
+.show_mail{grid-area: prof_inp_mail; text-align: center}
+.show_password{grid-area: prof_inp_password; text-align: center}
 .Profile_buttons{grid-area: prof_buttons}
 #profile_info{grid-area: info}

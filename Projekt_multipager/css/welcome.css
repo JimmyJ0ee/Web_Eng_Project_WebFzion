@@ -16,5 +16,7 @@ html{
 }
 .Welcome{
     font-size: 16px;
+    padding-top: 15%;
 }
 #welcome_indo{color: white;}
+.abstand{color: black; height: 20px}

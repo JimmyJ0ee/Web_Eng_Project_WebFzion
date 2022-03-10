@@ -5,9 +5,6 @@ html{
     text-align: center;
     align-items: center;
     font-weight: bold;
-}
-.Registration{
-    background-color: #000;
     font-size: 16px;
 }
 .Registration_Header{
@@ -20,10 +17,10 @@ html{
     height: 38px;
     border: 1px solid #c4c4c4;
     background-color: #c4c4c4;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 .Button_registration,.Button_to_login, #Button_ausklappen{
-    color:  #fff;
+    color:  black;
     font-weight: bold;
     background-color: #c4c4c4;
     border-radius: 25px;
@@ -37,19 +34,32 @@ html{
     background-color: #c4c4c4;
     border-radius: 25px;
     color: #000;
+    display: none;
 }
 #captcha_code{
     padding-top: 5px;
     padding-left: 5px;
     border-radius: 25px;
 }
+.arrow {
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
 .Registration{
     position: fixed;
+    padding-top: 50px;
     min-height: 99%;
     min-width: 99%;
     display: grid;
+    justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.1;
+    grid-template-rows: 0.1fr;
     grid-template-areas:
     ". reg_header ."
     ". reg_inp_username ."
@@ -57,11 +67,11 @@ html{
     ". reg_inp_password ."
     ". reg_inp_password_2 ."
     ". Button_ausklappen ."
+    ". captcha_info ."
     ". pop_up_human ."
     ". reg_inp_human ."
     ". btns ."
-    ". info ."
-    ". error_info .";
+    ". infos .";
 }
 .Registration_Header{grid-area: reg_header}
 .Registration_Input_Username{grid-area: reg_inp_username; text-align: center}
@@ -70,7 +80,7 @@ html{
 .Registration_Input_Password_2{grid-area: reg_inp_password_2; text-align: center}
 #Registration_Input_Human{grid-area: reg_inp_human; text-align: center}
 #Button_ausklappen{grid-area: Button_ausklappen}
+#captcha_info{grid-area: captcha_info}
 #Pop_Up_Human{grid-area: pop_up_human}
 .buttons{grid-area: btns}
-#registrieren_info{grid-area: info}
-#error_info{grid-area: error_info}
+.check_infos{grid-area: infos}

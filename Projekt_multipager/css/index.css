@@ -1,5 +1,4 @@
 :root{
-    --blue: #1e90ff;
     --black: #000;
     --white: #ffffff;
 }
@@ -18,8 +17,7 @@ html{
 .Homepage_Header{
     text-decoration: underline;
 }
-.button_dark_mode, .button_green_mode, .Button_Upload,
-.Button_profile, .button_white_mode{
+.Button_Upload, .Button_profile{
     color:  black;
     font-weight: bold;
     background-color: #c4c4c4;
@@ -27,8 +25,6 @@ html{
     height: 25px;
     width: 125px;
 }
-.Link{text-decoration: none}
-a:hover{color: white}
 @media(min-width: 1200px){
     .Homepage{
         position: fixed;
@@ -39,10 +35,10 @@ a:hover{color: white}
         grid-template-columns: 20% 60% 20%;
         grid-template-rows: 0.2fr;
         grid-template-areas:
-        "homepage_headerleiste homepage_headerleiste homepage_headerleiste"
+        "homepage_header homepage_header homepage_header"
         "homepage_nav homepage_inhalt homepage_seite";
     }
-    .Homepage_Headerleiste{grid-area: homepage_headerleiste}
+    .Homepage_Header{grid-area: homepage_header}
     .Homepage_Navigation{grid-area: homepage_nav}
     .Homepage_Inhalt{grid-area: homepage_inhalt}
     .Homepage_Seitenspalte{grid-area: homepage_seite}
@@ -67,12 +63,12 @@ a:hover{color: white}
         grid-template-columns: 5% 90% 5%;
         grid-template-rows: 0.2fr;
         grid-template-areas:
-        "homepage_headerleiste homepage_headerleiste homepage_headerleiste"
+        "homepage_header homepage_header homepage_header"
         "homepage_nav homepage_nav homepage_nav"
         "homepage_inhalt homepage_inhalt homepage_inhalt"
         "homepage_seite homepage_seite homepage_seite";
     }
-    .Homepage_Headerleiste{grid-area: homepage_headerleiste}
+    .Homepage_Header{grid-area: homepage_header}
     .Homepage_Navigation{grid-area: homepage_nav}
     .Homepage_Inhalt{grid-area: homepage_inhalt}
     .Homepage_Seitenspalte{grid-area: homepage_seite}

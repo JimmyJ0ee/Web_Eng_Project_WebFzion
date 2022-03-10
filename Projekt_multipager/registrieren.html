@@ -16,14 +16,17 @@
         <input type="password" class="Registration_Input_Password" id="reg_inp_pswd" placeholder="PASSWORD">
         <input type="password" class="Registration_Input_Password_2" id="reg_inp_rep_pswd" placeholder="REPEAT PASSWORD">
         <button id="Button_ausklappen" onclick="human()"><i class="arrow down"></i> </button>
+        <p id="captcha_info"></p>
         <div id="Pop_Up_Human"><img id="captcha_code" src="captcha_code.png" height="190" width="500" alt="Bitte wenden Sie sich an den Support"></div>
         <input id="Registration_Input_Human" placeholder="HUMAN?">
         <buttons class="buttons">
             <button class="Button_registration" onclick="register()">Register</button>
-            <button class="Button_to_login" onclick="to_login()">zu Login</button>
+            <button class="Button_to_login" onclick="to_login()">Zu Login</button>
         </buttons>
-        <p id="registrieren_info"></p>
-        <p id="error_info"></p>
+        <info class="check_infos">
+            <p id="registrieren_info"></p>
+            <p id="error_info"></p>
+        </info>
     </div>
 </body>
 </html>

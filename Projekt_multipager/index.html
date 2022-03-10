@@ -8,23 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webfzion Homepage</title>
 </head>
-<body>
+<body onload="set_color()">
     <div id="Homepage" class="Homepage">
-        <div class="Homepage_Headerleiste">
-            <h2 class="Homepage_Header">Foto Cloud</h2>
-            <button class="button_dark_mode" onclick="dark_mode()">Farbe Schwarz</button>
-            <button class="button_white_mode" onclick="white_mode()">Farbe Weiß</button>
-            <button class="button_green_mode" onclick="set_color_green()">Farbe Grün</button>
-            <button class="Button_Upload">Upload</button>
-            <button class="Button_profile" onclick="weiterleiten()">Profile</button>
-            <p id="index_info"></p>
-        </div>
+        <h2 class="Homepage_Header">Foto Cloud</h2>
         <nav class="Homepage_Navigation">
-            <a class="Link" href="index.html">Home</a><br>
-            <a class="Link" href="index.html">Link1</a><br>
-            <a class="Link" href="index.html">Link2</a><br>
-            <a class="Link" href="index.html">Link3</a><br>
-            <a class="Link" href="index.html">Link4</a>
+            <h2 class="navigation_header">Theme</h2>
+            <div class="themes">
+                <input type="radio" class="dark_mode" id="dark_mode" name="theme" onclick="dark_mode()">
+                <label for="dark_mode">Black</label>
+                <input type="radio" class="white_mode" id="white_mode" name="theme" onclick="white_mode()">
+                <label for="white_mode">White</label>
+                <input type="radio" class="green_mode" id="color_green" name="theme" onclick="set_color_green()">
+                <label for="color_green">Green</label>
+            </div>
         </nav>
         <div class="Homepage_Inhalt">
             <img src="kaffee_1.jpeg" height="100" width="200" alt="Bitte wenden Sie sich an den Support">
@@ -36,8 +32,9 @@
             <img src="Kaffee_7.jpeg" height="183" width="275" alt="Bitte wenden Sie sich an den Support">
         </div>
         <aside class="Homepage_Seitenspalte">
-            <h3 class="Homepage_Seitenleiste_Header">Seitenleiste</h3>
-            <p class="Homepage_Seitenleiste_Text">Hier könnte etwas über Kaffee stehen!!</p>
+            <button class="Button_Upload">Upload</button>
+            <button class="Button_profile" onclick="weiterleiten()">Profile</button>
+            <p id="index_info"></p>
         </aside>
     </div>
 </body>

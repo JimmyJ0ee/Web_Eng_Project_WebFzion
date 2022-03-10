@@ -8,16 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webfzion Profile</title>
 </head>
-<body>
+<body onload="nutzerdaten_profile()">
     <div id="Profile" class="profile_layout">
         <h2 class="Profile_Header">Profile</h2>
-        <input class="Profile_Input_Username" placeholder="USERNAME">
-        <input class="Profile_Input_Mail" placeholder="MAIL">
-        <input class="Profile_Input_Password" placeholder="PASSWORD">
-        <input class="Profile_Input_Password_2" placeholder="REPEAT PASSWORD">
+        <p class="show_username" id="name"></p>
+        <p class="show_mail" id="mail"></p>
+        <p class="show_password" id="password"></p>
         <div class="Profile_buttons">
           <button class="Button_Logout" onclick="logout()">Logout</button>
-          <button class="Button_Delete_Profile">Delete Profile</button>
           <button class="Button_back2home" onclick="to_homepage()">Back2Homepage</button>
         </div>
         <p id="profile_info"></p>
