@@ -25,7 +25,6 @@ html{
 }
 .Login{
     position: fixed;
-    padding-top: 100px;
     min-height: 99%;
     min-width: 99%;
     display: grid;
@@ -50,8 +49,14 @@ html{
     text-align: center
 }
 .buttons{grid-area: btn}
-#login_info{grid-area: info}
-#error_info{grid-area: error_info}
+#login_info{
+    grid-area: info;
+    /*padding-bottom: 200px;*/
+}
+#error_info{
+    grid-area: error_info;
+    /*padding-bottom: 200px;*/
+}
 /*.Login{
     padding-left: 37%;
     padding-top: 15%;
@@ -62,4 +67,5 @@ html{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-}*/
+}
+*/

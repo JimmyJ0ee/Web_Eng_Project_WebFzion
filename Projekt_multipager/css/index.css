@@ -1,6 +1,7 @@
 :root{
     --black: #000;
     --white: #ffffff;
+    --gray: #6B6B6B;
 }
 html{
     color: var(--white);
@@ -10,24 +11,18 @@ html{
     align-items: center;
     font-weight: bold;
 }
-.Homepage{
-    background-color: var(--black);
-    font-size: 16px;
-}
-.Homepage_Header{
-    text-decoration: underline;
-}
-.Button_Upload, .Button_profile{
-    color:  black;
+.Button_profile{
+    color:  var(--gray);
     font-weight: bold;
-    background-color: #c4c4c4;
+    background-color: var(--white);
     border-radius: 25px;
     height: 25px;
     width: 125px;
 }
 @media(min-width: 1200px){
     .Homepage{
-        position: fixed;
+        font-size: 16px;
+        position: absolute;
         min-height: 99%;
         min-width: 99%;
         z-index: 0;
@@ -38,24 +33,37 @@ html{
         "homepage_header homepage_header homepage_header"
         "homepage_nav homepage_inhalt homepage_seite";
     }
+
     .Homepage_Header{grid-area: homepage_header}
     .Homepage_Navigation{grid-area: homepage_nav}
-    .Homepage_Inhalt{grid-area: homepage_inhalt}
-    .Homepage_Seitenspalte{grid-area: homepage_seite}
+    .Homepage_Seitenspalte{
+        grid-area: homepage_seite;
+        position: absolute;
+        padding-left: 25%;
+        padding-top: 10%;
+        min-height: 99%;
+        min-width: 99%;
+        z-index: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr;
+        grid-template-areas:
+        "Button_profile";
+    }
     
     .Homepage_Inhalt{
+        grid-area: homepage_inhalt;
         position: absolute;
         display: flex;
         height: flex-end;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+        align-items: stretch;
     }
 }
 @media(max-width: 400px){
     .Homepage{
-        position: fixed;
+        position: absolute;
         min-height: 99%;
         min-width: 99%;
         z-index: 0;
@@ -70,10 +78,10 @@ html{
     }
     .Homepage_Header{grid-area: homepage_header}
     .Homepage_Navigation{grid-area: homepage_nav}
-    .Homepage_Inhalt{grid-area: homepage_inhalt}
     .Homepage_Seitenspalte{grid-area: homepage_seite}
 
     .Homepage_Inhalt{
+        grid-area: homepage_inhalt;
         position: absolute;
         display: flex;
         height: flex-end;

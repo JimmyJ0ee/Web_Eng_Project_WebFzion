@@ -5,6 +5,6 @@ function weiterleiten(){
     document.getElementById("welcome_info").innerHTML="Diving...";
     /**Verzögerung für Seitenwechsel */
     setTimeout(() => {
-        window.location.href = window.location.href.replace("welcome", "registrieren");
-    }, 3000);
+        window.location.href = window.location.href.replace("welcome", "login");
+    }, 500);
 }
