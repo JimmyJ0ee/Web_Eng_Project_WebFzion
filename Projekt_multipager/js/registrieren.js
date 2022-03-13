@@ -1,7 +1,6 @@
 /**Funktion, um im gleichen Tab zu Login zu navigieren */
 function to_login(){
   document.getElementById("registrieren_info").innerHTML="You will be redireceted soon. :)";
-  /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("registrieren", "login");
   }, 500);
@@ -30,7 +29,7 @@ function getRandomInt(max) {
 let random_number=getRandomInt(5);
 /**wählt zufällig das Bild für den Captcha Code aus  */
 let random_input;
-/**Gibt dem Nutzer die Info, welches Bild für den Code benutzt werden soll. */
+/**Gibt dem User die Info, welches Bild für den Code benutzt werden soll. */
 let captcha_info;
 if (random_number==0){
   random_input="263S2V";
@@ -71,11 +70,10 @@ function human(){
     document.getElementById("captcha_info").innerHTML ="";
   }
 }
-/**Funktion, die den Login regelt und alles prüft */
+/**Funktion, die die Registrierung regelt und alles prüft */
 function register(){
   /**Eingabe Benutzername */
   let username = document.getElementById("reg_inp_user").value;
-  /**Eingabe Benutzername prüfen */
   if(! username.match("^[a-zA-Z\-_]+$")){
     Error_werfen("Only use letters and '_' and '-' for your username.");
     return;
@@ -85,7 +83,6 @@ function register(){
   }
   /**Eingabe Mail-Adresse */
   let usermail = document.getElementById("reg_inp_mail").value;
-  /*prüfen, ob Eingabe vorhanden, oder ob Input-Feld leer*/
   if(usermail == ""){
     Error_werfen("Fill in your E-Mail pls.");
     return;
@@ -95,7 +92,6 @@ function register(){
   }
   /**Eingabe Passwort */
   let password = document.getElementById("reg_inp_pswd").value;
-  /**Eingabe Passwort prüfen */
   if(! password.match("^[a-zA-Z!#,+\-_?0-9]+$") || ! password.match(".*[0-9].*") || ! password.match(".*[!#,+\-_?].*")){
     Error_werfen("Password has to only contain letters, at least on number and one special sign ('!#,+-_?'.");
     return;
@@ -105,7 +101,6 @@ function register(){
   }
   /**Eingabe Passwort wiederholen */
   let passwordcontrol = document.getElementById("reg_inp_rep_pswd").value;
-  /**prüfen, ob Eingabe Passwort wiederholen identisch mit Passwort Eingabe */
   if(passwordcontrol == ""){
     Error_werfen("Please fill up the input: Repeat Password.");
     return;
@@ -115,7 +110,6 @@ function register(){
   }
   /**Eingabe Captcha Code */
   let human_input=document.getElementById("Registration_Input_Human").value;
-  /**prüfen, ob Eingabe Captcha Code mit Captcha übereinstimmt */
   if(human_input == ""){
     Error_werfen("Please put in the Captcha-Code.");
     return;
@@ -125,7 +119,6 @@ function register(){
   }
   /**Daten existierender Nutzer einlesen */
   let existingUser = window.localStorage.getItem(`this.${username}`);
-  /**prüfen, ob User schon vorhanden */
   if(existingUser !== null){
     Error_werfen("Username exists already. Please change the username.");
     return;
@@ -139,12 +132,9 @@ function register(){
     mail: usermail,
     usercolor: usercolor
   })
-  /**Nutzerdaten in LocalStorage laden */
   window.localStorage.setItem(`this.${username}`, jsonUser);
-  console.log(jsonUser)
   Error_werfen("");
   Feedback_Erfolg("Hello " + username + " ,the registration is succesful.");
-  /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("registrieren", "login");
   }, 500)

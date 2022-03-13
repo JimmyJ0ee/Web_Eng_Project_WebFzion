@@ -1,26 +1,26 @@
 /**Funktion, um im gleichen Tab zu Homepage zu navigieren */
 function to_homepage(){
   document.getElementById("profile_info").innerHTML="You will be redireceted soon. :)";
-  /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("profile", "index");
   }, 500);
 }
 /**Funkton für Logout des aktuellen Users */
 function logout(){
-  //window.localStorage.removeItem("auth.user");
   document.getElementById("profile_info").innerHTML="Log out proceeding.";
-  /**Verzögerung beim Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("profile", "login");
   }, 500);
 }
+/**Darstellung der beim Registrieren eingegebenen Daten des angemeldeten Users */
 function user_load(){
-  /**Darstellung der beim Registrieren eingegebenen Daten des angemeldeten Users */
   /**aktuellen User einlesen */
   let user = JSON.parse(window.localStorage.getItem("auth.user"));
+  /**Benutzername aktueller User */
   let username = user.username;
+  /**Mail aktueller User */
   let mail = user.mail;
+  /**Passwort aktueller User */
   let password = user.password;
   document.getElementById("name").placeholder = "USERNAME\t" + username;
   document.getElementById("mail").placeholder = "       E-MAIL\t" + mail;
@@ -30,7 +30,6 @@ function user_load(){
 function color_load(){
   /**aktuellen User einlesen */
   let user = JSON.parse(window.localStorage.getItem("auth.user"));
-  /**prüfen, welche Farbe der User eingestellt hat */
   if(user.usercolor == "black"){
     r.style.setProperty('--black', 'black');
     r.style.setProperty('--white', 'white');
@@ -59,7 +58,7 @@ function color_load(){
   }
 }
 var r = document.querySelector(':root');
-/**Farbe Homepage auf Grau stellen */
+/**Farbe auf Grau stellen */
 function set_color_gray(){
   /**aktuellen User einlesen */
   let user = JSON.parse(window.localStorage.getItem("auth.user"));
@@ -68,16 +67,15 @@ function set_color_gray(){
   r.style.setProperty('--gray', '#6B6B6B');
   r.style.setProperty('--blue', '#74421E');
   r.style.setProperty('--Button_hover', '#74421E');
-  /**dem User die geänderte Farbe zuweisen */
   user.usercolor="gray";
-  /**user zu String umformatieren */
+  /**Benutzername für Key setzen */
   let username = user.username;
+  /**user zu String umformatieren */
   let jsonUser = JSON.stringify(user);
-  /**User speichern */
   window.localStorage.setItem("auth.user", jsonUser);
   window.localStorage.setItem(`this.${username}`, jsonUser);
 }
-/**Farbe Homepage auf Schwarz stellen */
+/**Farbe auf Schwarz stellen */
 function dark_mode(){
   /**aktuellen User einlesen */
   let user = JSON.parse(window.localStorage.getItem("auth.user"));
@@ -86,16 +84,15 @@ function dark_mode(){
   r.style.setProperty('--gray', '#000');
   r.style.setProperty('--blue', '#0A676D');
   r.style.setProperty('--Button_hover', '#0A676D');
-  /**dem User die geänderte Farbe zuweisen */
   user.usercolor="black";
-  /**user zu String umformatieren */
+  /**Benutzername für Key setzen */
   let username = user.username;
+  /**user zu String umformatieren */
   let jsonUser = JSON.stringify(user);
-  /**User speichern */
   window.localStorage.setItem("auth.user", jsonUser);
   window.localStorage.setItem(`this.${username}`, jsonUser);
 }
-/**Farbe Homepage auf Weiß stellen */
+/**Farbe auf Weiß stellen */
 function white_mode(){
   /**aktuellen User einlesen */
   let user = JSON.parse(window.localStorage.getItem("auth.user"));
@@ -104,15 +101,15 @@ function white_mode(){
   r.style.setProperty('--gray', '#fff');
   r.style.setProperty('--blue', '#74421E');
   r.style.setProperty('--Button_hover', '#74421E');
-  /**dem User die geänderte Farbe zuweisen */
   user.usercolor="white";
-  /**user zu String umformatieren */
+  /**Benutzername für Key setzen */
   let username = user.username;
+  /**user zu String umformatieren */
   let jsonUser = JSON.stringify(user);
-  /**User speichern */
   window.localStorage.setItem("auth.user", jsonUser);
   window.localStorage.setItem(`this.${username}`, jsonUser);
 }
+/**Farbe auf Rot stellen */
 function warm_red(){
   /**aktuellen User einlesen */
   let user = JSON.parse(window.localStorage.getItem("auth.user"));
@@ -121,12 +118,11 @@ function warm_red(){
   r.style.setProperty('--gray', '#513A3E');
   r.style.setProperty('--blue', '#74421E');
   r.style.setProperty('--Button_hover', '#fff');
-  /**dem User die geänderte Farbe zuweisen */
   user.usercolor="warm_red";
-  /**user zu String umformatieren */
+  /**Benutzername für Key setzen */
   let username = user.username;
+  /**user zu String umformatieren */
   let jsonUser = JSON.stringify(user);
-  /**User speichern */
   window.localStorage.setItem("auth.user", jsonUser);
   window.localStorage.setItem(`this.${username}`, jsonUser);
 }
@@ -134,11 +130,10 @@ function warm_red(){
 function change_info(info){
   document.getElementById("change_info").innerHTML = info;
 }
-
+/**Funktion, damit User seine Daten ändern kann */
 function change(){
   /**Eingabe Benutzername */
   let username_change = document.getElementById("reg_inp_user").value;
-  /**Eingabe Benutzername prüfen */
   if(! username_change.match("^[a-zA-Z\-_]+$")){
     change_info("Only use letters and '_' and '-' for your username.");
     return;
@@ -148,7 +143,6 @@ function change(){
   }
   /**Eingabe Mail-Adresse */
   let usermail_change = document.getElementById("reg_inp_mail").value;
-  /*prüfen, ob Eingabe vorhanden, oder ob Input-Feld leer*/
   if(usermail_change == ""){
     change_info("Fill in your E-Mail pls.");
     return;
@@ -158,7 +152,6 @@ function change(){
   }
   /**Eingabe Passwort */
   let password_change = document.getElementById("reg_inp_pswd").value;
-  /**Eingabe Passwort prüfen */
   if(! password_change.match("^[a-zA-Z!#,+\-_?0-9]+$") || ! password_change.match(".*[0-9].*") || ! password_change.match(".*[!#,+\-_?].*")){
     change_info("Password has to only contain letters, at least on number and one special sign ('!#,+-_?'.");
     return;
@@ -168,7 +161,6 @@ function change(){
   }
   /**Eingabe Passwort wiederholen */
   let passwordcontrol = document.getElementById("reg_inp_rep_pswd").value;
-  /**prüfen, ob Eingabe Passwort wiederholen identisch mit Passwort Eingabe */
   if(passwordcontrol == ""){
     change_info("Please fill up the input: Repeat Password.");
     return;
@@ -176,17 +168,10 @@ function change(){
     change_info("The passwords don't match. Try again.");
     return;
   }
-  
-  /**Daten existierender Nutzer einlesen */
-  let existingUser = window.localStorage.getItem(`this.${username_change}`);
+  /**Daten aktueller User einlesen */
   let currentuser = window.localStorage.getItem("auth.user");
-  /**prüfen, ob User schon vorhanden */
-  if(existingUser !== null && existingUser === currentuser){
-    change_info("Username exists already. Please change the username.");
-    return;
-  }
+  /**gibt aktuelle Farbe an geändertes Profil weiter */
   let color_change = currentuser.usercolor;
-
   /**Nutzerdaten in String umwandeln */
   let jsonUser = JSON.stringify({
     username: username_change,
@@ -194,11 +179,9 @@ function change(){
     mail: usermail_change,
     usercolor: color_change
   })
-  /**Nutzerdaten in LocalStorage laden */
   window.localStorage.setItem(`this.${username_change}`, jsonUser);
   change_info("");
   change_info("Hello " + username_change + "your change is succesful.");
-  /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("profile", "login");
   }, 500)

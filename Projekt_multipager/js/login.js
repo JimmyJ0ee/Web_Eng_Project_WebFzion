@@ -1,7 +1,6 @@
 /**Funktion, um im gleichen Tab zu Registrieren zu navigieren */
 function to_register(){
   document.getElementById("login_info").innerHTML="You will be redireceted soon. :)";
-  /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("login", "registrieren");
   }, 500);
@@ -24,8 +23,8 @@ function Feedback_Erfolg(Erfolgsnachricht){
 }
 /**Funktion, die den Login regelt und alles prüft */
 function login(){
+  /**aktueller User */
   let currentuser = window.localStorage.getItem("auth.user");
-  /**prüft, ob user bereits angemeldet ist */
   if(currentuser == null){
     Error_werfen("auth.user is null.");
   }
@@ -35,13 +34,10 @@ function login(){
   let password = document.getElementById("password").value;
   /**gespeicherte Nutzer (als String) */
   let savedUserString = window.localStorage.getItem(`this.${username}`);
-  /**prüfen, ob Eingaben von User mit gespeicherten Usern übereinstimmen */
   try {
-    /**gespeicherten User in Objekt um parsen */
+    /**gespeicherten User zu Objekt parsen */
     let savedUserObject = JSON.parse(savedUserString);
-    /**Passwortvergleich */
     if(savedUserObject.password === password){
-      /**erfolgreicher Login */
       Error_werfen("");
       window.localStorage.setItem("auth.user", savedUserString);
       Feedback_Erfolg("Your login is succesful. :)");
@@ -49,7 +45,6 @@ function login(){
         window.location.href = window.location.href.replace("login", "index");
       }, 500);
     } else {
-      /**Login fehlgeschlagen */
       Error_werfen("Pasword is not correct.");
     }
   } catch (er) {
