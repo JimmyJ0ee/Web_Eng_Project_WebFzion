@@ -1,6 +1,6 @@
 /**Funktion, um im gleichen Tab zu Registrieren zu navigieren */
 function to_register(){
-  document.getElementById("login_info").innerHTML="Sie werden weitergeleitet... :)";
+  document.getElementById("login_info").innerHTML="You will be redireceted soon. :)";
   /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("login", "registrieren");
@@ -19,7 +19,7 @@ function Feedback_Erfolg(Erfolgsnachricht){
   if(typeof Erfolgsnachricht === "string"){
     document.getElementById("login_info").innerHTML = Erfolgsnachricht;
   }else{
-    document.getElementById("login_info").innerHTML = "Login erfolgreich.";
+    document.getElementById("login_info").innerHTML = "Login succesful.";
   }
 }
 /**Funktion, die den Login regelt und alles prüft */
@@ -27,7 +27,7 @@ function login(){
   let currentuser = window.localStorage.getItem("auth.user");
   /**prüft, ob user bereits angemeldet ist */
   if(currentuser == null){
-    Error_werfen("Der auth.user ist null");
+    Error_werfen("auth.user is null.");
   }
   /**eingegebener Benutzername */
   let username = document.getElementById("username").value;
@@ -44,15 +44,15 @@ function login(){
       /**erfolgreicher Login */
       Error_werfen("");
       window.localStorage.setItem("auth.user", savedUserString);
-      Feedback_Erfolg("Sie sind erfolgreich eingeloggt und werden gleich weitergeleitet!");
+      Feedback_Erfolg("Your login is succesful. :)");
       setTimeout(() => {
         window.location.href = window.location.href.replace("login", "index");
       }, 500);
     } else {
       /**Login fehlgeschlagen */
-      Error_werfen("Das Passwort ist nicht korrekt!");
+      Error_werfen("Pasword is not correct.");
     }
   } catch (er) {
-    Error_werfen("Der Benutzer konnte nicht gefunden werden.");
+    Error_werfen("The user is not available.");
   }
 }

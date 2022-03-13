@@ -1,6 +1,6 @@
 /**Funktion, um im gleichen Tab zu Login zu navigieren */
 function to_login(){
-  document.getElementById("registrieren_info").innerHTML="Sie werden weitergeleitet... :)";
+  document.getElementById("registrieren_info").innerHTML="You will be redireceted soon. :)";
   /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("registrieren", "login");
@@ -19,7 +19,7 @@ function Feedback_Erfolg(Erfolgsnachricht){
   if (typeof Erfolgsnachricht === "string"){
     document.getElementById("registrieren_info").innerHTML = Erfolgsnachricht;
   }else{
-    document.getElementById("registrieren_info").innerHTML = "Login erfolgreich.";
+    document.getElementById("registrieren_info").innerHTML = "Login succesful.";
   }
 }
 /**Zufällige Auswahl des Captcha-Codes*/
@@ -34,27 +34,27 @@ let random_input;
 let captcha_info;
 if (random_number==0){
   random_input="263S2V";
-  captcha_info="Geben Sie den Text des Bildes oben links ein!";
+  captcha_info="picture: top-left";
 }
 else if(random_number==1){
   random_input="AAXUE";
-  captcha_info="Geben Sie den Text des Bildes oben rechts ein!";
+  captcha_info="picture: top-right";
 }
 else if(random_number==2){
   random_input="RUNAJIX";
-  captcha_info="Geben Sie den Text des Bildes mittig links ein!";
+  captcha_info="picture: mid-left";
 }
 else if(random_number==3){
   random_input="JIC22U";
-  captcha_info="Geben Sie den Text des Bildes mittig rechts ein!";
+  captcha_info="picture: mid-right";
 }
 else if(random_number==4){
   random_input="mwxe2";
-  captcha_info="Geben Sie den Text des Bildes unten links ein!";
+  captcha_info="picture: bottom-left";
 }
 else if(random_number==5){
   random_input="Eps10 vecTor";
-  captcha_info="Geben Sie den Text des Bildes unten rechts ein!";
+  captcha_info="picture: bottom-right";
 }
 /**Zähler der Anz Klicks auf "Captcha-Bild ausklappen zählt" */
 let zaehler=0;
@@ -77,57 +77,57 @@ function register(){
   let username = document.getElementById("reg_inp_user").value;
   /**Eingabe Benutzername prüfen */
   if(! username.match("^[a-zA-Z\-_]+$")){
-    Error_werfen("Der Benutzername darf nur aus Groß- und Kleinbuchstaben und einem '-' oder '_' bestehen.");
+    Error_werfen("Only use letters and '_' and '-' for your username.");
     return;
   }else if(username.length > 20){
-    Error_werfen("Der Benutzername darf maximal 20 Zeichen lang sein.");
+    Error_werfen("The length of username is limited by 20.");
     return;
   }
   /**Eingabe Mail-Adresse */
   let usermail = document.getElementById("reg_inp_mail").value;
   /*prüfen, ob Eingabe vorhanden, oder ob Input-Feld leer*/
   if(usermail == ""){
-    Error_werfen("Bitte geben Sie Ihre Mail-Adresse ein!");
+    Error_werfen("Fill in your E-Mail pls.");
     return;
   }else if(! usermail.match("^[A-Za-z0-9._-]+@+\.[A-Za-z0-9.-]+\.[a-z]{2,3}")){
-    Error_werfen("Bitte geben Sie eine Adresse nach dem Beispiel: username@email.com an.\nBemerkung: Sonderzeichen könnten zu Problemen führen!");
+    Error_werfen("example: username@email.com an.\nnote: speccial signs could make problems.");
     return;
   }
   /**Eingabe Passwort */
   let password = document.getElementById("reg_inp_pswd").value;
   /**Eingabe Passwort prüfen */
   if(! password.match("^[a-zA-Z!#,+\-_?0-9]+$") || ! password.match(".*[0-9].*") || ! password.match(".*[!#,+\-_?].*")){
-    Error_werfen("Das Passwort darf nur aus Groß- und Kleinbuchstaben, sowie mindestens einer Zahl und einem der folgenden Zeichen bestehen: '!#,+-_?'.");
+    Error_werfen("Password has to only contain letters, at least on number and one special sign ('!#,+-_?'.");
     return;
   }else if(password.length < 8 || password.length > 20){
-    Error_werfen("Das Passwort muss mindestens 8 und maximal 20 Zeichen lang sein.");
+    Error_werfen("The password must at least contain 8 letters.");
     return;
   }
   /**Eingabe Passwort wiederholen */
   let passwordcontrol = document.getElementById("reg_inp_rep_pswd").value;
   /**prüfen, ob Eingabe Passwort wiederholen identisch mit Passwort Eingabe */
   if(passwordcontrol == ""){
-    Error_werfen("Bitte füllen Sie das 'Repeat Passwort'-Feld aus!");
+    Error_werfen("Please fill up the input: Repeat Password.");
     return;
   }else if(passwordcontrol != password){
-    Error_werfen("Die Passwörter stimmen nicht überein, bitte prüfen Sie Ihre Eingaben!");
+    Error_werfen("The passwords don't match. Try again.");
     return;
   }
   /**Eingabe Captcha Code */
   let human_input=document.getElementById("Registration_Input_Human").value;
   /**prüfen, ob Eingabe Captcha Code mit Captcha übereinstimmt */
   if(human_input == ""){
-    Error_werfen("Bitte geben Sie den Captcha Code ein");
+    Error_werfen("Please put in the Captcha-Code.");
     return;
   }else if(human_input != random_input){
-    Error_werfen("Geben Sie den Captcha Code richtig ein!");
+    Error_werfen("Please put in the correct Captcha-Code.");
     return;
   }
   /**Daten existierender Nutzer einlesen */
   let existingUser = window.localStorage.getItem(`this.${username}`);
   /**prüfen, ob User schon vorhanden */
   if(existingUser !== null){
-    Error_werfen("Der Benutzer existiert bereits, bitte ändern Sie ihren Benutzernamen!");
+    Error_werfen("Username exists already. Please change the username.");
     return;
   }
   /**Standartfarbe der Homepage auf Schwarz setzen */
@@ -143,7 +143,7 @@ function register(){
   window.localStorage.setItem(`this.${username}`, jsonUser);
   console.log(jsonUser)
   Error_werfen("");
-  Feedback_Erfolg("Hallo " + username + " ,die Registrierung war erfolgreich, sie werden gleich weitergeleitet!");
+  Feedback_Erfolg("Hello " + username + " ,the registration is succesful.");
   /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("registrieren", "login");

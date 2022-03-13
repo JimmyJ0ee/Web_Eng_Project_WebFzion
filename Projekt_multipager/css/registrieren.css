@@ -7,6 +7,9 @@ html{
     font-weight: bold;
     font-size: 16px;
 }
+input::placeholder{
+    font-weight: bold;
+}
 @media (min-width: 800px){
     .Registration_Input_Username, .Registration_Input_Mail,
     .Registration_Input_Password, .Registration_Input_Password_2,
@@ -42,7 +45,7 @@ html{
         border-radius: 25px;
     }
     .arrow {
-        border: solid #fff;
+        border: solid #000;
         border-width: 0 3px 3px 0;
         display: inline-block;
         padding: 3px;

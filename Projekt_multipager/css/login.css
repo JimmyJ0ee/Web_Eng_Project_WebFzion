@@ -24,6 +24,9 @@ html{
         ". info ."
         ". error_info .";
     }
+    input::placeholder{
+        font-weight: bold;
+    }
     .Login_Header{grid-area: log_header}
     .Login_Input_Username{
         grid-area: log_inp_username;

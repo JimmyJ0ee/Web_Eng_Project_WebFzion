@@ -1,6 +1,6 @@
 /**Funktion, um im gleichen Tab zu Homepage zu navigieren */
 function to_homepage(){
-  document.getElementById("profile_info").innerHTML="Sie werden weitergeleitet... :)";
+  document.getElementById("profile_info").innerHTML="You will be redireceted soon. :)";
   /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("profile", "index");
@@ -9,7 +9,7 @@ function to_homepage(){
 /**Funkton für Logout des aktuellen Users */
 function logout(){
   //window.localStorage.removeItem("auth.user");
-  document.getElementById("profile_info").innerHTML="Sie werden ausgeloggt...";
+  document.getElementById("profile_info").innerHTML="Log out proceeding.";
   /**Verzögerung beim Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("profile", "login");
@@ -140,40 +140,40 @@ function change(){
   let username_change = document.getElementById("reg_inp_user").value;
   /**Eingabe Benutzername prüfen */
   if(! username_change.match("^[a-zA-Z\-_]+$")){
-    change_info("Der Benutzername darf nur aus Groß- und Kleinbuchstaben und einem '-' oder '_' bestehen.");
+    change_info("Only use letters and '_' and '-' for your username.");
     return;
   }else if(username_change.length > 20){
-    change_info("Der Benutzername darf maximal 20 Zeichen lang sein.");
+    change_info("The length of username is limited by 20.");
     return;
   }
   /**Eingabe Mail-Adresse */
   let usermail_change = document.getElementById("reg_inp_mail").value;
   /*prüfen, ob Eingabe vorhanden, oder ob Input-Feld leer*/
   if(usermail_change == ""){
-    change_info("Bitte geben Sie Ihre Mail-Adresse ein!");
+    change_info("Fill in your E-Mail pls.");
     return;
   }else if(! usermail_change.match("^[A-Za-z0-9._-]+@+\.[A-Za-z0-9.-]+\.[a-z]{2,3}")){
-    change_info("Bitte geben Sie eine Adresse nach dem Beispiel: username@email.com an.\nBemerkung: Sonderzeichen könnten zu Problemen führen!");
+    change_info("example: username@email.com an.\nnote: speccial signs could make problems.");
     return;
   }
   /**Eingabe Passwort */
   let password_change = document.getElementById("reg_inp_pswd").value;
   /**Eingabe Passwort prüfen */
   if(! password_change.match("^[a-zA-Z!#,+\-_?0-9]+$") || ! password_change.match(".*[0-9].*") || ! password_change.match(".*[!#,+\-_?].*")){
-    change_info("Das Passwort darf nur aus Groß- und Kleinbuchstaben, sowie mindestens einer Zahl und einem der folgenden Zeichen bestehen: '!#,+-_?'.");
+    change_info("Password has to only contain letters, at least on number and one special sign ('!#,+-_?'.");
     return;
   }else if(password_change.length < 8 || password_change.length > 20){
-    change_info("Das Passwort muss mindestens 8 und maximal 20 Zeichen lang sein.");
+    change_info("The password must at least contain 8 letters.");
     return;
   }
   /**Eingabe Passwort wiederholen */
   let passwordcontrol = document.getElementById("reg_inp_rep_pswd").value;
   /**prüfen, ob Eingabe Passwort wiederholen identisch mit Passwort Eingabe */
   if(passwordcontrol == ""){
-    change_info("Bitte füllen Sie das 'Repeat Passwort'-Feld aus!");
+    change_info("Please fill up the input: Repeat Password.");
     return;
   }else if(passwordcontrol != password_change){
-    change_info("Die Passwörter stimmen nicht überein, bitte prüfen Sie Ihre Eingaben!");
+    change_info("The passwords don't match. Try again.");
     return;
   }
   
@@ -182,7 +182,7 @@ function change(){
   let currentuser = window.localStorage.getItem("auth.user");
   /**prüfen, ob User schon vorhanden */
   if(existingUser !== null && existingUser === currentuser){
-    change_info("Der Benutzer existiert bereits, bitte ändern Sie ihren Benutzernamen!");
+    change_info("Username exists already. Please change the username.");
     return;
   }
   let color_change = currentuser.usercolor;
@@ -197,7 +197,7 @@ function change(){
   /**Nutzerdaten in LocalStorage laden */
   window.localStorage.setItem(`this.${username_change}`, jsonUser);
   change_info("");
-  change_info("Hallo " + username_change + " ,die Änderung war erfolgreich.");
+  change_info("Hello " + username_change + "your change is succesful.");
   /**Verzögerung für Seitenwechsel */
   setTimeout(() => {
     window.location.href = window.location.href.replace("profile", "login");
