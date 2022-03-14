@@ -81,4 +81,7 @@ html{
         width: 120px;
         margin-top: 20px;
     }
+    input::placeholder{
+        font-weight: bold;
+    }
 }

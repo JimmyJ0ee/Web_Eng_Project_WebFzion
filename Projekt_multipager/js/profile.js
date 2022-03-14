@@ -155,10 +155,10 @@ function change(){
   /**Eingabe Passwort */
   let password_change = document.getElementById("reg_inp_pswd").value;
   if(! password_change.match("^[a-zA-Z!#,+\-_?0-9]+$") || ! password_change.match(".*[0-9].*") || ! password_change.match(".*[!#,+\-_?].*")){
-    change_info("Password has to only contain letters and at least on number");
+    change_info("Password needs to contain letters and at least on number");
     return;
   }else if(password_change.length < 8 || password_change.length > 20){
-    change_info("The password must at least contain 8 letters.");
+    change_info("The password must contain between 8 and 20 letters.");
     return;
   }
   /**Eingabe Passwort wiederholen */

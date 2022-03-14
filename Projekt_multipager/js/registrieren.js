@@ -95,10 +95,10 @@ function register(){
   /**Eingabe Passwort */
   let password = document.getElementById("reg_inp_pswd").value;
   if(! password.match("^[a-zA-Z!#,+\-_?0-9]+$") || ! password.match(".*[0-9].*") || ! password.match(".*[!#,+\-_?].*")){
-    Error_werfen("Password has to only contain letters and at least on number");
+    Error_werfen("Password needs to contain letters and at least on number");
     return;
   }else if(password.length < 8 || password.length > 20){
-    Error_werfen("The password must at least contain 8 letters.");
+    Error_werfen("The password must contain between 8 and 20 letters.");
     return;
   }
   /**Eingabe Passwort wiederholen */
