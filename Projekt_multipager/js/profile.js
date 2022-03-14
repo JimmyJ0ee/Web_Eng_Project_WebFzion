@@ -23,7 +23,7 @@ function user_load(){
   /**Passwort aktueller User */
   let password = user.password;
   document.getElementById("name").placeholder = "USERNAME\t" + username;
-  document.getElementById("mail").placeholder = "       E-MAIL\t" + mail;
+  document.getElementById("mail").placeholder = "E-MAIL\t" + mail;
   document.getElementById("password").placeholder = "PASSWORD\t" + password;
 }
 /**Funktion für Farbgestaltung der Homepage, dem User entsprechend */
@@ -143,17 +143,19 @@ function change(){
   }
   /**Eingabe Mail-Adresse */
   let usermail_change = document.getElementById("reg_inp_mail").value;
+  /**Eigenschaften der Mail */
+  const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if(usermail_change == ""){
     change_info("Fill in your E-Mail pls.");
     return;
-  }else if(! usermail_change.match("^[A-Za-z0-9._-]+@+\.[A-Za-z0-9.-]+\.[a-z]{2,3}")){
+  }else if(! pattern.test(usermail_change.toLowerCase())){
     change_info("example: username@email.com an.\nnote: speccial signs could make problems.");
     return;
   }
   /**Eingabe Passwort */
   let password_change = document.getElementById("reg_inp_pswd").value;
   if(! password_change.match("^[a-zA-Z!#,+\-_?0-9]+$") || ! password_change.match(".*[0-9].*") || ! password_change.match(".*[!#,+\-_?].*")){
-    change_info("Password has to only contain letters, at least on number and one special sign ('!#,+-_?'.");
+    change_info("Password has to only contain letters and at least on number");
     return;
   }else if(password_change.length < 8 || password_change.length > 20){
     change_info("The password must at least contain 8 letters.");

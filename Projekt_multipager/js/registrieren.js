@@ -83,17 +83,19 @@ function register(){
   }
   /**Eingabe Mail-Adresse */
   let usermail = document.getElementById("reg_inp_mail").value;
+  /**Eigenschaften der Mail */
+  const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if(usermail == ""){
     Error_werfen("Fill in your E-Mail pls.");
     return;
-  }else if(! usermail.match("^[A-Za-z0-9._-]+@+\.[A-Za-z0-9.-]+\.[a-z]{2,3}")){
+  }else if(! pattern.test(usermail.toLowerCase())){
     Error_werfen("example: username@email.com an.\nnote: speccial signs could make problems.");
     return;
   }
   /**Eingabe Passwort */
   let password = document.getElementById("reg_inp_pswd").value;
   if(! password.match("^[a-zA-Z!#,+\-_?0-9]+$") || ! password.match(".*[0-9].*") || ! password.match(".*[!#,+\-_?].*")){
-    Error_werfen("Password has to only contain letters, at least on number and one special sign ('!#,+-_?'.");
+    Error_werfen("Password has to only contain letters and at least on number");
     return;
   }else if(password.length < 8 || password.length > 20){
     Error_werfen("The password must at least contain 8 letters.");
