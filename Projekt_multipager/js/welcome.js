@@ -7,6 +7,6 @@ function weiterleiten(){
     sound.loop = true;
     setTimeout(() => {
         sound.play();
-        window.open("C:/Users/Chris/Documents/Web_Eng_Project_WebFzion-main/Projekt_multipager/login.html");
+        window.open("login.html");
     }, 500);
 }

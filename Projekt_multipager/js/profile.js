@@ -134,11 +134,10 @@ function change_info(info){
 function change(){
   /**Eingabe Benutzername */
   let username_change = document.getElementById("reg_inp_user").value;
-  if(! username_change.match("^[a-zA-Z\-_]+$")){
-    change_info("Only use letters and '_' and '-' for your username.");
-    return;
-  }else if(username_change.length > 20){
-    change_info("The length of username is limited by 20.");
+  /**aktuellen User einlesen */
+  let user = JSON.parse(window.localStorage.getItem("auth.user"));
+  if(username_change !== user.username){
+    change_info("pls enter your username correctly");
     return;
   }
   /**Eingabe Mail-Adresse */
