@@ -1,0 +1,84 @@
+<!Doctype html>
+
+<html lang="de-DE">
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content ="noindex, nofollow">
+        <meta name="description" content="Cloud">
+        <meta name="keywords" content="Bilder, Cloud">
+        <meta name="author" content="CB, NE">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="layout_basic.css">
+        <link rel="stylesheet" href="layout_responsive.css">
+        <script type="text/javascript" src="webfzion.js"></script>
+        <!--<link rel="shortcut icon" type="image/x-icon" href=""> hat Fehler geworfen-->
+        <title>WebFzion</title>
+    </head>
+    <body>
+        <div id="Welcome" class="Welcome">
+            <h1 class="Welcome_Header">Hello you :)</h1><br/>
+            <div class="Welcome_Text">You are diving into your personal foto cloud ...</div>
+            <button class="Button_enter" onclick="layer_switch_welcome()">Enter!</button>
+            <!-- Denkanstoß Realisierung in JavaScript function ausgabe() {if(window.event.keyCode == 13) {alert("Enter gedrückt") return false}-->
+        </div>
+        <div id="Login" class="Login">
+            <h2 class="Login_Header">Login</h2>
+            <input class="Login_Input_Username" placeholder="USERNAME">
+            <input class="Login_Input_Password" placeholder="PASSWORD">
+            </br>
+            <button class="Button_login" onclick="layer_switch_login()">Login</button>
+        </div>
+        <div id="Registration" class="Registration">
+            <h2 class="Registration_Header">Registration</h2>
+            <input class="Registration_Input_Username" placeholder="USERNAME">
+            <input class="Registration_Input_Mail" placeholder="MAIL">
+            <input class="Registration_Input_Password" placeholder="PASSWORD">
+            <input class="Registration_Input_Password_2" placeholder="REPEAT PASSWORD">
+            <button id="Button_ausklappen" onclick="human()"><i class="arrow down"></i> </button>
+                <div id="Pop_Up_Human"><img id="captcha_code" src="captcha_code.png" height="190" width="500" alt="Bitte wenden Sie sich an den Support"></div>
+            <input id="Registration_Input_Human" placeholder="HUMAN?">
+            <button class="Button_registration" onclick="layer_switch_registration()">Register</button>
+        </div>
+        <div id="Homepage" class="Homepage">
+            <div class="Homepage_Headerleiste">
+                <h2 class="Homepage_Header">Foto Cloud</h2>
+                <button class="Button_Teilen">Teilen</button>
+                <button class="Button_Filter">Filter</button>
+                <button class="Button_Upload">Upload</button>
+                <button class="Button_profile" onclick="open_profile()">Profile</button>
+            </div>
+            <nav class="Homepage_Navigation">
+                <a class="Link" href="index.html">Home</a><br>
+                <a class="Link" href="index.html">Link1</a><br>
+                <a class="Link" href="index.html">Link2</a><br>
+                <a class="Link" href="index.html">Link3</a><br>
+                <a class="Link" href="index.html">Link4</a>
+            </nav>
+            <div class="Homepage_Inhalt">
+                <img src="kaffee_1.jpeg" height="100" width="200" alt="Bitte wenden Sie sich an den Support">
+                <img src="Kaffee_2.jpeg" height="70" width="160" alt="Bitte wenden Sie sich an den Support">
+                <img src="Kaffee_3.jpeg" height="168" width="300" alt="Bitte wenden Sie sich an den Support">
+                <img src="Kaffee_4.jpeg" height="194" width="259" alt="Bitte wenden Sie sich an den Support">
+                <img src="Kaffee_5.jpeg" height="147" width="343" alt="Bitte wenden Sie sich an den Support">
+                <img src="Kaffee_6.jpg" height="210" width="400" alt="Bitte wenden Sie sich an den Support">
+                <img src="Kaffee_7.jpeg" height="183" width="275" alt="Bitte wenden Sie sich an den Support">
+            </div>
+            <aside class="Homepage_Seitenspalte">
+                <h3 class="Homepage_Seitenleiste_Header">Seitenleiste</h3>
+                <p class="Homepage_Seitenleiste_Text">Hier könnte etwas über Kaffee stehen!!</p>
+            </aside>
+        </div>
+        <div id="Profile" class="profile_layout">
+            <h2 class="Profile_Header">Profile</h2>
+            <input class="Profile_Input_Username" placeholder="USERNAME">
+            <input class="Profile_Input_Mail" placeholder="MAIL">
+            <input class="Profile_Input_Password" placeholder="PASSWORD">
+            <input class="Profile_Input_Password_2" placeholder="REPEAT PASSWORD">
+            <div class="Profile_buttons">
+              <button class="Button_Logout">Logout</button>
+              <button class="Button_Delete_Profile">Delete Profile</button>
+              <button class="Button_back2home" onclick="layer_switch_homepage()">Back2Homepage</button>
+            </div>
+        </div>
+    </body>
+</html>

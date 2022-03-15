@@ -1,0 +1,68 @@
+html{
+    color: #fff;
+    background-color: black;
+    font-family: Alegreya, 'Times New Roman', Times, serif;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+}
+.Button_enter, .Button_registration, .Button_login, #Button_ausklappen,
+.Button_profile, .Button_Logout, .Button_Teilen,
+.Button_Filter, .Button_Upload{
+    color:  #fff;
+    font-weight: bold;
+    background-color: #c4c4c4;
+    border-radius: 25px;
+    height: 25px;
+    width: 75px;
+}
+.Button_back2home, .Button_Delete_Profile{
+    color:  #fff;
+    font-weight: bold;
+    background-color: #c4c4c4;
+    border-radius: 25px;
+    height: 25px;
+    width: 125px;
+}
+.Welcome, .Login, .Registration, .Homepage, .Profile{
+    background-color: #000;
+    font-size: 16px;
+}
+.Login_Header, .Registration_Header, .Homepage_Header, .Profile_Header{
+    text-decoration: underline;
+}
+.Login_Input_Username, .Login_Input_Password, .Registration_Input_Username,
+.Registration_Input_Password, .Registration_Input_Mail, .Registration_Input_Password,
+.Registration_Input_Password_2, #Registration_Input_Human, .Profile_Input_Username,
+.Profile_Input_Password, .Profile_Input_Password_2, .Profile_Input_Mail{
+    width: 515px;
+    height: 38px;
+    border: 1px solid #c4c4c4;
+    background-color: #c4c4c4;
+    border-radius: 25px;
+}
+#Pop_Up_Human{
+    width: 515px;
+    height:200px;
+    border: 1px solid #c4c4c4;
+    background-color: #c4c4c4;
+    border-radius: 25px;
+    color: #000;
+}
+#captcha_code{
+    padding-top: 5px;
+    padding-left: 5px;
+    border-radius: 25px;
+}
+.arrow {
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.Link{text-decoration: none}
+a:hover{color: white}
