@@ -39,6 +39,6 @@ class TestURLPrint(TestCase):
 			self.assertRaises(Exception, bottom_table_function.chance(0))
 	
     #gleicher Fehler für stdin: eof reading line
-	#def test_strikeout(self):
-	#	with patch('sys.stdin', new = StringIO('6\n')):
-	#		self.assertRaises(Exception, bottom_table_function.strikeout(0))
+	def test_strikeout(self):
+		with patch('sys.stdin', new = StringIO('12\n')):
+			self.assertRaises(Exception, bottom_table_function.strikeout(0))
